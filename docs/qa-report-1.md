@@ -97,7 +97,7 @@ TODO: Paste the full output of the check script
 
 ## Acceptance Criteria Verification
 
-Review the acceptance criteria defined at the start of the sprint (in `acceptance-criteria.md`). For each criterion, record whether it was met:
+Review the acceptance criteria defined at the start of the sprint (in `week-02-acceptance-criteria.md`). For each criterion, record whether it was met:
 
 ### Part 1: Service Definition
 
