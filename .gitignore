@@ -1,0 +1,25 @@
+# Week-specific environment files (see GITIGNORE_UPDATE.md)
+week-2/.env
+week-2/.env.local
+.env
+.env.local
+.env*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
