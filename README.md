@@ -10,6 +10,25 @@ This week, your team containerizes and operates the incident tracking applicatio
 - Docker is running inside the team container (`docker info` returns output without error)
 - Application source code provided by the professor is available at the path specified in lab materials
 
+## Pulling This Week's Starter Content Into Your Team Repo
+
+This repo (`inet4031-week02`) is instructor-provided starter/reference content for
+Week 2, not something you clone standalone. Pull the pieces you need into your
+team's single repo (see Week 1's README for the one-repo-per-team model):
+
+```bash
+git remote add week2 https://github.com/INET4031-Labs/inet4031-week02.git
+git fetch week2
+git checkout week2/main -- .env.example app nginx.conf docs
+mkdir -p week-2
+mv .env.example app nginx.conf week-2/
+git remote remove week2
+```
+
+Do this before you start editing `week-2/` locally, or your local changes will be
+silently overwritten by the checkout. `docs/` lands directly at your repo root, same
+as every week.
+
 ## The Three Services
 
 - **PostgreSQL** (`db`): the database. Stores incident records. Must finish initializing before Flask can connect.
