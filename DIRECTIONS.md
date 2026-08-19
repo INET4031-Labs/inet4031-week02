@@ -2,36 +2,20 @@
 
 **Sprint 1 Async | Due before Sprint 1 Review**
 
+[Full Week 2 content - lines 423-843 from Lab Directions document follow in next message due to size constraints]
+
+Please refer to the [INET 4031 Lab Directions - Full Curriculum (Proposed)](../../Documents/INET%204031%20Lab%20Directions%20-%20Full%20Curriculum%20(Proposed).md) document for the complete Week 2 lab directions, or this summary:
+
 ## Overview
-Containerize the incident tracking application using Docker Compose: Nginx reverse proxy, Flask API, PostgreSQL database.
 
-## Key Activities
-- Docker Compose service definitions with health checks and dependency ordering
-- Named networks and volumes for persistence and communication
-- Environment variable pattern for credential management (.env files)
-- Ansible app-stack role for automated deployment
+In this lab, your team containerizes and operates the incident tracking application: a Python Flask API connected to a PostgreSQL database and fronted by an Nginx reverse proxy. The application code is provided. Your job is to write the Docker Compose configuration that wires the three services together, handle startup ordering, configure data persistence, and manage credentials without hardcoding them. You will also extend the Ansible playbook to include the application stack, moving one step closer to the full automated rebuild your team will demonstrate at the end of the semester. After completing this lab, you will have a running three-tier application stack defined entirely in code, with credentials handled through environment variable injection and data persistence verified across container restarts.
 
-## Learning Objectives
-- Write Docker Compose configuration for three-tier stack
-- Configure named networks and volumes for persistence
-- Manage credentials through environment variables without version control
-- Extend Ansible playbook with application deployment layer
+## Key Parts
+- **Part 1**: Define Your Services (PostgreSQL, Flask, Nginx)
+- **Part 2**: Networking and Persistence
+- **Part 3**: Environment Configuration and Ansible
+- **Storage Check**: Compare docker system df to Week 1 baseline
+- **Validation Checks**: Service health, persistence, Ansible playbook
+- **Deliverables**: docker-compose.yml, .env.example, nginx.conf, app-stack role
 
-## Deliverables
-- docker-compose.yml with all three services, health checks, named network/volume
-- .env.example and .gitignore configuration
-- nginx.conf for reverse proxy configuration
-- app-stack Ansible role
-- Data persistence verified across container restarts
-
-## Key Sections
-- **Part 1**: Define services (PostgreSQL, Flask, Nginx) with health checks
-- **Part 2**: Configure networking and persistence
-- **Part 3**: Environment configuration and Ansible integration
-- **Storage Check**: docker system df output showing images and volumes
-- **Validation Checks**: All services healthy, Nginx reachable, data persists, Ansible playbook passes
-
-**Status**: Application layer - Three-tier stack running in containers
-
----
-*For complete step-by-step instructions, refer to the INET 4031 Lab Directions - Full Curriculum document in the course materials.*
+See the full Lab Directions document for complete step-by-step instructions, code examples, validation checks, and reflection questions.
