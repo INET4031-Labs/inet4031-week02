@@ -19,15 +19,16 @@ team's single repo (see Week 1's README for the one-repo-per-team model):
 ```bash
 git remote add week2 https://github.com/INET4031-Labs/inet4031-week02.git
 git fetch week2
-git checkout week2/main -- .env.example app nginx.conf docs
+git checkout week2/main -- .env.example app scripts docs
 mkdir -p week-2
-mv .env.example app nginx.conf week-2/
+mv .env.example app week-2/
 git remote remove week2
 ```
 
 Do this before you start editing `week-2/` locally, or your local changes will be
-silently overwritten by the checkout. `docs/` lands directly at your repo root, same
-as every week.
+silently overwritten by the checkout. `docs/` and `scripts/` land directly at your
+repo root, same as every week. `week-2/nginx.conf` is not shipped as a file in this
+repo -- you write it yourself as part of Step 2 (Configure Docker Compose) below.
 
 ## The Three Services
 
