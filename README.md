@@ -8,7 +8,7 @@ This week, your team containerizes and operates the incident tracking applicatio
 
 - Week 1 complete: GitHub repo exists, team container is accessible to all members, `ansible/site.yml` is committed and runs clean
 - Docker is running inside the team container (`docker info` returns output without error)
-- Application source code provided by the professor is available at the path specified in lab materials
+- Application source code is provided in this repo's `app/` directory (see "Pulling This Week's Starter Content" below)
 
 ## Pulling This Week's Starter Content Into Your Team Repo
 
@@ -40,7 +40,7 @@ repo -- you write it yourself as part of Step 2 (Configure Docker Compose) below
 
 ### Step 1: Place Application Source Code
 
-The professor will provide application source code. Place it in the `app/` directory of this folder.
+The application source code is provided in the `app/` directory of this folder (pulled in the step above).
 
 ```bash
 ls week-2/app/
