@@ -77,7 +77,7 @@ docker compose up -d
 
 ### Step 5: Verify Health and Persistence
 
-- All three containers should show `healthy` status
+- Two of the three containers should show `healthy` status. All should show `running.`
 - Data should persist across container restarts (tested by the validation checks)
 
 ### Step 6: Extend Ansible
@@ -108,11 +108,11 @@ Add the `app-stack` role to `ansible/site.yml` so the Docker Compose stack can b
 Run these after your stack is up:
 
 ```bash
-# All three services healthy
+# All three services running
 docker compose ps
 
 # Nginx reachable on mapped port
-curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/health
 
 # Data persists across restart
 curl -X POST http://localhost:8080/incidents \
@@ -120,9 +120,10 @@ curl -X POST http://localhost:8080/incidents \
   -d '{"title": "Test", "status": "open", "description": "Persistence test"}'
 
 # Ansible playbook runs clean
-ansible-playbook -i ansible/inventory ansible/site.yml
+ansible-playbook -i ansible/inventory ansible/site.yml -K
 
 # Check script passes
+chmod +x scripts/check-week2.sh
 ./scripts/check-week2.sh
 ```
 
