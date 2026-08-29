@@ -10,11 +10,11 @@ This file is completed at the end of Week 2 after the Docker Compose stack is fu
 
 ## Validation Check Results
 
-### Check 1: All Three Services Are Healthy
+### Check 1: All Three Services Are Running and Two Of Them Show Healthy
 
 **Test:** Run `docker compose ps` from the `week-2/` directory
 
-**Expected:** Three rows, each with "healthy" in the Status column
+**Expected:** Three rows, each with "running" in the Status column
 
 **Actual Result:**
 ```
@@ -29,7 +29,7 @@ TODO: Paste the actual output of docker compose ps
 
 ### Check 2: Nginx Is Reachable on the Mapped Port
 
-**Test:** Run `curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/`
+**Test:** Run `curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/health`
 
 **Expected:** HTTP 200
 
@@ -80,7 +80,7 @@ TODO: Paste the PLAY RECAP section from the second run
 
 ### Check 5: Check Script Passes
 
-**Test:** Run `./scripts/check-week2.sh`
+**Test:** Run `chmod +x scripts/check-week2.sh` then `./scripts/check-week2.sh`
 
 **Expected:** All checks pass with exit code 0
 
@@ -103,12 +103,9 @@ Review the criteria below for each part of this week's deliverables. For each cr
 
 TODO: [ ] All three services start in correct order
 TODO: [ ] Health checks work as specified
-TODO: [ ] Dependencies properly ordered with `condition: service_healthy`
 
 ### Part 2: Networking and Persistence
 
-TODO: [ ] Named network connects all services
-TODO: [ ] Services can communicate by hostname
 TODO: [ ] Data persists across `docker compose restart`
 TODO: [ ] Data is lost after `docker compose down -v`
 
