@@ -2,7 +2,7 @@
 
 **Owned by:** Scrum Master
 
-This file is completed at the end of the async week (Week 2). Review what your team shipped, what went well, what went poorly, and one specific process change for Sprint 2.
+This file is completed at the end of week 2. Review what your team shipped, what went well, what went poorly, and one specific process change for Sprint 2.
 
 ## What Went Well
 
