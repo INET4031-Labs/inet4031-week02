@@ -133,13 +133,18 @@ echo "Check 5: Application Health Check"
 echo "-----------------------------------"
 
 if command -v curl &> /dev/null; then
-    HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/health 2>/dev/null || echo "000")
+    if [ -f "$REPO_ROOT/week-2/.env" ]; then
+        HOST_PORT=$(grep -E "^HOST_PORT=" "$REPO_ROOT/week-2/.env" | cut -d '=' -f2)
+    fi
+    HOST_PORT="${HOST_PORT:-8080}"
+
+    HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:${HOST_PORT}/health" 2>/dev/null || echo "000")
     if [ "$HTTP_CODE" == "200" ]; then
-        check_pass "Nginx responds on http://localhost:8080/health (HTTP $HTTP_CODE)"
+        check_pass "Nginx responds on http://localhost:${HOST_PORT}/health (HTTP $HTTP_CODE)"
     elif [ "$HTTP_CODE" != "000" ]; then
-        check_warn "Nginx responded on http://localhost:8080/health but with HTTP $HTTP_CODE (expected 200)"
+        check_warn "Nginx responded on http://localhost:${HOST_PORT}/health but with HTTP $HTTP_CODE (expected 200)"
     else
-        check_warn "No response from http://localhost:8080/health (stack may not be running)"
+        check_warn "No response from http://localhost:${HOST_PORT}/health (stack may not be running, or HOST_PORT in .env doesn't match your assigned port)"
     fi
 else
     check_warn "curl not available - skipping health check"
