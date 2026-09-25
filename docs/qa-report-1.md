@@ -60,24 +60,7 @@ TODO: Paste the output showing the incident was retrieved after restart
 
 ---
 
-### Check 4: Ansible Playbook Runs Clean
-
-**Test:** Run `ansible-playbook -i ansible/inventory ansible/site.yml`
-
-**Expected:** PLAY RECAP shows `failed=0` and `unreachable=0` for both plays
-
-**Actual Result:**
-```
-TODO: Paste the PLAY RECAP section from the second run
-```
-
-**Status:** TODO: [ ] Pass [ ] Fail
-
-**Notes:** Did both plays (baseline and app-stack) complete? Any warnings or skipped tasks?
-
----
-
-### Check 5: Check Script Passes
+### Check 4: Check Script Passes
 
 **Test:** Run `chmod +x scripts/check-week2.sh` then `./scripts/check-week2.sh`
 
@@ -108,12 +91,10 @@ TODO: [ ] Health checks work as specified
 TODO: [ ] Data persists across `docker compose restart`
 TODO: [ ] Data is lost after `docker compose down -v`
 
-### Part 3: Environment and Ansible
+### Part 3: Environment
 
 TODO: [ ] `.env` is in `.gitignore`
-TODO: [ ] `.env.example` documents all variables
-TODO: [ ] Ansible playbook brings up stack without error
-TODO: [ ] Playbook is idempotent
+TODO: [ ] `.env.example` documents all variablest
 
 ---
 
